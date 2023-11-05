@@ -16,7 +16,8 @@ on run
 		try
 			set this_folder to (the target of the front window) as alias
 		on error
-			set this_folder to POSIX path of startup disk
+			-- get the alias of the home folder of the current user
+			set this_folder to path to home folder
 		end try
 		
 		my process_item(this_folder)
